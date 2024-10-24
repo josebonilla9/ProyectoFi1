@@ -1,7 +1,5 @@
 
-import java.awt.event.*;
 import javax.swing.*;
-
 
 public final class JPanelSimuladores extends javax.swing.JPanel {
 
@@ -28,6 +26,11 @@ public final class JPanelSimuladores extends javax.swing.JPanel {
         imgGrado0.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         imgGrado0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         imgGrado0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        imgGrado0.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imgGrado0MouseClicked(evt);
+            }
+        });
         add(imgGrado0, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 400, 300));
 
         imgGrado1.setFont(new java.awt.Font("Roboto Light", 0, 36)); // NOI18N
@@ -61,6 +64,19 @@ public final class JPanelSimuladores extends javax.swing.JPanel {
         add(imgGrado5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 430, 400, 300));
     }// </editor-fold>//GEN-END:initComponents
 
+    private JFramePrincipal frame;
+
+    public JPanelSimuladores(JFramePrincipal frame) {
+        this.frame = frame;
+        initComponents();
+        mostrarGradoButtons();
+    }
+    
+    private void imgGrado0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgGrado0MouseClicked
+        JPanelCarrusel panelCarrusel = new JPanelCarrusel();
+        frame.showCarrusel(panelCarrusel);
+    }//GEN-LAST:event_imgGrado0MouseClicked
+
     public void mostrarGradoButtons() {
         JLabel[] botonGrados = {
             imgGrado0, imgGrado1, imgGrado2, imgGrado3, imgGrado4, imgGrado5
@@ -71,8 +87,6 @@ public final class JPanelSimuladores extends javax.swing.JPanel {
         }
     }
     
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel imgGrado0;
     private javax.swing.JLabel imgGrado1;

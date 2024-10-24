@@ -42,17 +42,12 @@ public final class JFramePrincipal extends javax.swing.JFrame {
         botonLauncher0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonLauncher0.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonLauncher0MouseClicked(evt);
+                botonLauncherMouseClicked(evt);
             }
         });
         fondo.add(botonLauncher0, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 83, 90));
 
         botonLauncher1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botonLauncher1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonLauncher1MouseClicked(evt);
-            }
-        });
         fondo.add(botonLauncher1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 90, 83, 90));
 
         botonLauncher2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -102,10 +97,10 @@ public final class JFramePrincipal extends javax.swing.JFrame {
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 780, Short.MAX_VALUE)
+            .addGap(0, 830, Short.MAX_VALUE)
         );
 
-        fondo.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 1510, 780));
+        fondo.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 1510, 830));
 
         jLabelFondo.setBackground(new java.awt.Color(255, 4, 4));
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Fondo base.png"))); // NOI18N
@@ -127,16 +122,10 @@ public final class JFramePrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonLauncher0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLauncher0MouseClicked
-        JPanelSimuladores panelSimuladores = new JPanelSimuladores();
+    private void botonLauncherMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLauncherMouseClicked
+        JPanelSimuladores panelSimuladores = new JPanelSimuladores(this);
         showPanel(panelSimuladores);
-    }//GEN-LAST:event_botonLauncher0MouseClicked
-
-    private void botonLauncher1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonLauncher1MouseClicked
-        JPanelCarrusel panelCarrusel = new JPanelCarrusel();
-        showPanel(panelCarrusel);
-        
-    }//GEN-LAST:event_botonLauncher1MouseClicked
+    }//GEN-LAST:event_botonLauncherMouseClicked
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -157,9 +146,9 @@ public final class JFramePrincipal extends javax.swing.JFrame {
             Utilidades.SetButtonLauncherImage(botonLaunchers[i], i);
         }
     }
-    
-    private void showPanel(JPanel p) {
-        p.setSize(1510, 780);
+        
+    public void showPanel(JPanel p) {
+        p.setSize(1510, 830);
         p.setLocation(0, 0);
         
         content.removeAll();
@@ -167,9 +156,11 @@ public final class JFramePrincipal extends javax.swing.JFrame {
         content.revalidate();
         content.repaint();
     }
-
-
-
+    
+    public void showCarrusel(JPanelCarrusel panelCarrusel) {
+        showPanel(panelCarrusel);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel botonLauncher0;
     private javax.swing.JLabel botonLauncher1;
