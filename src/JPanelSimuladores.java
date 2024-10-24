@@ -64,17 +64,17 @@ public final class JPanelSimuladores extends javax.swing.JPanel {
         add(imgGrado5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 430, 400, 300));
     }// </editor-fold>//GEN-END:initComponents
 
-    private JFramePrincipal frame;
+    private JFramePrincipal framePrincipal;
 
-    public JPanelSimuladores(JFramePrincipal frame) {
-        this.frame = frame;
+    public JPanelSimuladores(JFramePrincipal framePrincipal) {
+        this.framePrincipal = framePrincipal;
         initComponents();
         mostrarGradoButtons();
     }
     
     private void imgGrado0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgGrado0MouseClicked
         JPanelCarrusel panelCarrusel = new JPanelCarrusel();
-        frame.showCarrusel(panelCarrusel);
+        framePrincipal.showCarrusel(panelCarrusel);
     }//GEN-LAST:event_imgGrado0MouseClicked
 
     public void mostrarGradoButtons() {

@@ -60,18 +60,18 @@ public class Utilidades {
     
     public static void CambiarImgPuntos(JLabel[] botonPunto, int contador) {
         for (int i = 0; i < botonPunto.length; i++) {
-            ImageIcon imageEmpty = new ImageIcon("src/images/PuntoCarruselEmpty.png");
-            int widthEmpty = imageEmpty.getIconWidth();
-            int heightEmpty = imageEmpty.getIconHeight();
-            Icon iconEmpty = new ImageIcon(imageEmpty.getImage().getScaledInstance(widthEmpty, heightEmpty, Image.SCALE_DEFAULT));
-            botonPunto[i].setIcon(iconEmpty);
+            ImageIcon botonVacio = new ImageIcon("src/images/PuntoCarruselEmpty.png");
+            int widthVacio = botonVacio.getIconWidth();
+            int heightVacio = botonVacio.getIconHeight();
+            Icon iconVacio = new ImageIcon(botonVacio.getImage().getScaledInstance(widthVacio, heightVacio, Image.SCALE_DEFAULT));
+            botonPunto[i].setIcon(iconVacio);
         }
 
-        ImageIcon imageFilled = new ImageIcon("src/images/PuntoCarruselFilled.png");
-        int widthFilled = imageFilled.getIconWidth();
-        int heightFilled = imageFilled.getIconHeight();
-        Icon iconFilled = new ImageIcon(imageFilled.getImage().getScaledInstance(widthFilled, heightFilled, Image.SCALE_DEFAULT));
-        botonPunto[contador].setIcon(iconFilled);
+        ImageIcon botonLleno = new ImageIcon("src/images/PuntoCarruselFilled.png");
+        int widthRelleno = botonLleno.getIconWidth();
+        int heightRelleno = botonLleno.getIconHeight();
+        Icon iconRelleno = new ImageIcon(botonLleno.getImage().getScaledInstance(widthRelleno, heightRelleno, Image.SCALE_DEFAULT));
+        botonPunto[contador].setIcon(iconRelleno);
     }
     
     public static void SetJLabelCarruselLateralImg (JLabel jLabelFondo){
@@ -87,5 +87,3 @@ public class Utilidades {
         jLabelFondo.repaint();
     }
 }
-
-
