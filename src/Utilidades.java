@@ -31,6 +31,22 @@ public class Utilidades {
             
             botonLaunchers.repaint();
         }
+        
+    public static void AgrandarBotones (JLabel botonLaunchers) {
+        Dimension sizeBoton = botonLaunchers.getSize();
+                
+        int newWidth = (int) (sizeBoton.width * 1.3);
+        int newHeight = (int) (sizeBoton.height * 1.3);
+        botonLaunchers.setSize(newWidth, newHeight);
+    }
+    
+    public static void ReducirBotones (JLabel botonLaunchers) {
+        Dimension sizeBoton = botonLaunchers.getSize();
+                
+        int newWidth = (int) (sizeBoton.width / 1.3);
+        int newHeight = (int) (sizeBoton.height / 1.3);
+        botonLaunchers.setSize(newWidth, newHeight);
+    }
     
     public static void SetJLabelGradoImage (JLabel jLabelFondo, int contador){
         

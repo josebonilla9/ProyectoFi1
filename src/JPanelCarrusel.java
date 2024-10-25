@@ -102,6 +102,14 @@ public final class JPanelCarrusel extends javax.swing.JPanel {
 
         botonComenzar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Comenzar.png"))); // NOI18N
         botonComenzar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonComenzar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonComenzarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonComenzarMouseExited(evt);
+            }
+        });
         add(botonComenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 770, 260, 50));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -112,6 +120,14 @@ public final class JPanelCarrusel extends javax.swing.JPanel {
     private void flechaIzquierdaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flechaIzquierdaMouseClicked
         flechaIzquierdaMouseClick();
     }//GEN-LAST:event_flechaIzquierdaMouseClicked
+
+    private void botonComenzarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonComenzarMouseEntered
+        Utilidades.AgrandarBotones(botonComenzar);
+    }//GEN-LAST:event_botonComenzarMouseEntered
+
+    private void botonComenzarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonComenzarMouseExited
+        Utilidades.ReducirBotones(botonComenzar);
+    }//GEN-LAST:event_botonComenzarMouseExited
 
     private void flechaDerechaMouseClick() {                                           
         numImgInicial++;
