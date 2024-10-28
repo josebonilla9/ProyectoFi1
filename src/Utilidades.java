@@ -2,6 +2,16 @@
 import java.awt.*;
 import javax.swing.*;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Map;
+
+
 public class Utilidades {
     public static void SetButtonLauncherImage (JLabel botonLaunchers, int contador){
         
@@ -18,14 +28,14 @@ public class Utilidades {
                 int width = Math.round(proporcionWidth * imgWidth);
                 int height = Math.round(proporcionWidth * imgHeight);   
                 
-                Icon icon = new ImageIcon (image.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
+                Icon icon = new ImageIcon (image.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
                 botonLaunchers.setIcon(icon);
             } else {
                 float proporcionHeight = (float) labelHeight / imgHeight;
                 int width = Math.round(proporcionHeight * imgWidth);
                 int height = Math.round(proporcionHeight * imgHeight);
                 
-                Icon icon = new ImageIcon (image.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
+                Icon icon = new ImageIcon (image.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
                 botonLaunchers.setIcon(icon);
             }
             
@@ -55,20 +65,57 @@ public class Utilidades {
             int width = image.getIconWidth();
             int height = image.getIconHeight();
 
-            Icon icon = new ImageIcon (image.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
+            Icon icon = new ImageIcon (image.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
             jLabelFondo.setIcon(icon);
                 
             jLabelFondo.repaint();
         }
     
+    
+    /*
+    
+//    Método para insertar JSON doonde se devolverá un array con las imágenes que queremos según el grado que necesitemos abrir
+    
+    private String[] insertarJSON() {
+        
+//        Crear swith para los nombres de las imágenes del carrusel según el grado que sean (Grado0, Grado1 ...)
+    
+        return [];
+    }
+    
+    */
+    
+    public static void insertarJSON() {
+        JSONParser jsonParser = new JSONParser();
+
+        try (FileReader reader = new FileReader("grados.json")) {
+            
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
+
+                for (Map.Entry<String, JSONArray> entry : ((Map<String, JSONArray>) jsonObject).entrySet()) {
+                    String claveGrado = entry.getKey();
+                    JSONArray items = entry.getValue();
+
+                    System.out.println("Clave: " + claveGrado);
+                    for (Object item : items) {
+                        System.out.println("  Elemento: " + item);
+                }
+            }
+
+        } catch (IOException | ParseException e) {
+        }
+    }
+    
     public static void SetJLabelCarruselCentralImg (JLabel jLabelFondo, int contador){
+                
+        //Crear bucle for para elegir la imagen según el contador
         
         ImageIcon image = new ImageIcon("src/images/Embarque" + contador + ".png");
                 
         int width = image.getIconWidth();
         int height = image.getIconHeight();
 
-        Icon icon = new ImageIcon (image.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
+        Icon icon = new ImageIcon (image.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
         jLabelFondo.setIcon(icon);
 
         jLabelFondo.repaint();
@@ -79,14 +126,14 @@ public class Utilidades {
             ImageIcon botonVacio = new ImageIcon("src/images/PuntoCarruselEmpty.png");
             int widthVacio = botonVacio.getIconWidth();
             int heightVacio = botonVacio.getIconHeight();
-            Icon iconVacio = new ImageIcon(botonVacio.getImage().getScaledInstance(widthVacio, heightVacio, Image.SCALE_DEFAULT));
+            Icon iconVacio = new ImageIcon(botonVacio.getImage().getScaledInstance(widthVacio, heightVacio, Image.SCALE_SMOOTH));
             botonPunto[i].setIcon(iconVacio);
         }
 
         ImageIcon botonLleno = new ImageIcon("src/images/PuntoCarruselFilled.png");
         int widthRelleno = botonLleno.getIconWidth();
         int heightRelleno = botonLleno.getIconHeight();
-        Icon iconRelleno = new ImageIcon(botonLleno.getImage().getScaledInstance(widthRelleno, heightRelleno, Image.SCALE_DEFAULT));
+        Icon iconRelleno = new ImageIcon(botonLleno.getImage().getScaledInstance(widthRelleno, heightRelleno, Image.SCALE_SMOOTH));
         botonPunto[contador].setIcon(iconRelleno);
     }
     
@@ -97,7 +144,7 @@ public class Utilidades {
         int width = image.getIconWidth();
         int height = image.getIconHeight();
 
-        Icon icon = new ImageIcon (image.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));
+        Icon icon = new ImageIcon (image.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
         jLabelFondo.setIcon(icon);
 
         jLabelFondo.repaint();
