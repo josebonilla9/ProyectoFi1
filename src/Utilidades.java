@@ -2,17 +2,17 @@
 import java.awt.*;
 import javax.swing.*;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.Map;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 
 public class Utilidades {
+    
+// Desde aquí código del JFramePrincipal 
+    
     public static void SetButtonLauncherImageSmall (JLabel botonLaunchers, int contador){
         
         ImageIcon image = new ImageIcon("src/images/LauncherButton" + contador + ".png");
@@ -49,22 +49,8 @@ public class Utilidades {
             
             botonLaunchers.repaint();
         }
-        
-    public static void AgrandarBotones (JLabel botonLaunchers) {
-        Dimension sizeBoton = botonLaunchers.getSize();
-                
-        int newWidth = (int) (sizeBoton.width * 1.3);
-        int newHeight = (int) (sizeBoton.height * 1.3);
-        botonLaunchers.setSize(newWidth, newHeight);
-    }
-    
-    public static void ReducirBotones (JLabel botonLaunchers) {
-        Dimension sizeBoton = botonLaunchers.getSize();
-                
-        int newWidth = (int) (sizeBoton.width / 1.3);
-        int newHeight = (int) (sizeBoton.height / 1.3);
-        botonLaunchers.setSize(newWidth, newHeight);
-    }
+
+// Desde aquí código del JPanelSimuladores
     
     public static void SetJLabelGradoImageSmall (JLabel jLabelFondo, int contador){
         
@@ -93,46 +79,37 @@ public class Utilidades {
     }
     
     
-    /*
+// Desde aquí código del JPanelCarrusel
     
-//    Método para insertar JSON doonde se devolverá un array con las imágenes que queremos según el grado que necesitemos abrir
     
-    private String[] insertarJSON() {
+    public static String mostrarMensajeConsola(int index) {
+        String elementoSinNum = "";
         
-//        Crear swith para los nombres de las imágenes del carrusel según el grado que sean (Grado0, Grado1 ...)
-    
-        return [];
-    }
-    
-    */
-    
-    
-    public static void insertarJSON() {
-        JSONParser jsonParser = new JSONParser();
-
-        try (FileReader reader = new FileReader("grados.json")) {
+        try {
+            String content = new String(Files.readAllBytes(Paths.get("src/images/grados.json")));
             
-            JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
+            JSONObject jsonObject = new JSONObject(content);
 
-                for (Map.Entry<String, JSONArray> entry : ((Map<String, JSONArray>) jsonObject).entrySet()) {
-                    String claveGrado = entry.getKey();
-                    JSONArray items = entry.getValue();
+                JSONArray items = jsonObject.getJSONArray("Grado" + index);
+                String elemento = items.getString(0);
+                elementoSinNum = elemento.substring(0, elemento.length() - 1);
+                
+                System.out.println("  Elemento: " + elementoSinNum);
 
-                    System.out.println("Clave: " + claveGrado);
-                    for (Object item : items) {
-                        System.out.println("  Elemento: " + item);
-                }
-            }
-
-        } catch (IOException | ParseException e) {
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo JSON.");
+        } catch (org.json.JSONException e) {
+            System.out.println("Error al analizar el archivo JSON.");
         }
+        
+        return elementoSinNum;
     }
-    
+        
     public static void SetJLabelCarruselCentralImg (JLabel jLabelFondo, int contador){
                 
         //Crear bucle for para elegir la imagen según el contador
         
-        ImageIcon image = new ImageIcon("src/images/Embarque" + contador + ".png");
+        ImageIcon image = new ImageIcon("src/images/" + elementoSinNum + contador + ".png");
                 
         int width = image.getIconWidth();
         int height = image.getIconHeight();
