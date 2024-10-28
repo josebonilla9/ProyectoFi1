@@ -10,7 +10,7 @@ public final class JPanelCarrusel extends javax.swing.JPanel {
         initComponents();
         Utilidades.SetJLabelCarruselLateralImg(imgLateral1);
         Utilidades.SetJLabelCarruselLateralImg(imgLateral2);
-        
+        mostrarButtons();
         mostrarImgCentral();
     }
     
@@ -50,23 +50,12 @@ public final class JPanelCarrusel extends javax.swing.JPanel {
         imgLateral2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         add(imgLateral2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 785, 470));
 
-        flechaIzquierda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Flecha izquierda.png"))); // NOI18N
+        flechaIzquierda.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         flechaIzquierda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        flechaIzquierda.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                flechaIzquierdaMouseClicked(evt);
-            }
-        });
-        add(flechaIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 22, 35));
+        add(flechaIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 30, 50));
 
-        flechaDerecha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Flecha derecha.png"))); // NOI18N
         flechaDerecha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        flechaDerecha.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                flechaDerechaMouseClicked(evt);
-            }
-        });
-        add(flechaDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 250, 22, 35));
+        add(flechaDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 250, 30, 50));
 
         panelPuntosCarrusel.setOpaque(false);
 
@@ -100,34 +89,9 @@ public final class JPanelCarrusel extends javax.swing.JPanel {
 
         add(panelTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 760, 230));
 
-        botonComenzar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Comenzar.png"))); // NOI18N
         botonComenzar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botonComenzar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botonComenzarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonComenzarMouseExited(evt);
-            }
-        });
-        add(botonComenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 770, 260, 50));
+        add(botonComenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 760, 300, 50));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void flechaDerechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flechaDerechaMouseClicked
-        flechaDerechaMouseClick();
-    }//GEN-LAST:event_flechaDerechaMouseClicked
-
-    private void flechaIzquierdaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flechaIzquierdaMouseClicked
-        flechaIzquierdaMouseClick();
-    }//GEN-LAST:event_flechaIzquierdaMouseClicked
-
-    private void botonComenzarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonComenzarMouseEntered
-        Utilidades.AgrandarBotones(botonComenzar);
-    }//GEN-LAST:event_botonComenzarMouseEntered
-
-    private void botonComenzarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonComenzarMouseExited
-        Utilidades.ReducirBotones(botonComenzar);
-    }//GEN-LAST:event_botonComenzarMouseExited
 
     private void flechaDerechaMouseClick() {                                           
         numImgInicial++;
@@ -154,11 +118,49 @@ public final class JPanelCarrusel extends javax.swing.JPanel {
         
         Utilidades.CambiarImgPuntos(botonPunto, numImgInicial);
     }
+    
+    public void mostrarButtons() {
+        JLabel[] botonesJLabel = {
+            botonComenzar, flechaIzquierda, flechaDerecha
+        };
+        
+        String[] etiquetas = {"Comenzar", "Flecha izquierda", "Flecha derecha"};
+        
+        for (int i = 0; i < botonesJLabel.length; i++) {
+            Utilidades.SetButtonLauncherImageSmall(botonesJLabel[i], i % 3);
+            final int index = i;
+           
+            Utilidades.SetButtonsCarruselSmall(botonesJLabel[index], etiquetas[index]);
 
+            botonesJLabel[i].addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    if (index == 1) {
+                        flechaIzquierdaMouseClick();                        
+                    } else if (index == 2){
+                        flechaDerechaMouseClick();
+                    }
+                }
+                @Override
+                public void mouseEntered(java.awt.event.MouseEvent evt) {
+                    Utilidades.SetButtonsCarruselBig(botonesJLabel[index], etiquetas[index]);
+                }
+                @Override
+                public void mouseExited(java.awt.event.MouseEvent evt) {
+                    Utilidades.SetButtonsCarruselSmall(botonesJLabel[index], etiquetas[index]);
+                }
+                @Override
+                public void mousePressed(java.awt.event.MouseEvent evt) {
+                    Utilidades.SetButtonsCarruselSmall(botonesJLabel[index], etiquetas[index]);
+                }
+                @Override
+                public void mouseReleased(java.awt.event.MouseEvent evt) {
+                    Utilidades.SetButtonsCarruselBig(botonesJLabel[index], etiquetas[index]);
+                }
+            });
+        }
+    }
     
-    
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel barraAislada;
     private javax.swing.JLabel botonComenzar;

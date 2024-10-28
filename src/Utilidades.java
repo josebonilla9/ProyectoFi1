@@ -13,7 +13,15 @@ import java.util.Map;
 
 
 public class Utilidades {
-    public static void SetButtonLauncherImage (JLabel botonLaunchers, int contador){
+    public static void SetButtonLauncherImageSmall (JLabel botonLaunchers, int contador){
+        
+        ImageIcon image = new ImageIcon("src/images/LauncherButton" + contador + ".png");
+                        
+        Icon icon = new ImageIcon (image.getImage().getScaledInstance(85, 85, Image.SCALE_SMOOTH));
+        botonLaunchers.setIcon(icon);
+    }
+    
+    public static void SetButtonLauncherImageBig (JLabel botonLaunchers, int contador){
         
         ImageIcon image = new ImageIcon("src/images/LauncherButton" + contador + ".png");
         
@@ -58,7 +66,7 @@ public class Utilidades {
         botonLaunchers.setSize(newWidth, newHeight);
     }
     
-    public static void SetJLabelGradoImage (JLabel jLabelFondo, int contador){
+    public static void SetJLabelGradoImageSmall (JLabel jLabelFondo, int contador){
         
         ImageIcon image = new ImageIcon("src/images/Grado" + contador + ".png");
                 
@@ -70,6 +78,19 @@ public class Utilidades {
                 
             jLabelFondo.repaint();
         }
+    
+    public static void SetJLabelGradoImageBig (JLabel jLabelFondo, int contador){
+        
+        ImageIcon image = new ImageIcon("src/images/Grado" + contador + ".png");
+
+            int labelWidth = jLabelFondo.getWidth();
+            int labelHeight = jLabelFondo.getHeight();
+
+            Icon icon = new ImageIcon (image.getImage().getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH));
+            jLabelFondo.setIcon(icon);
+            
+            jLabelFondo.repaint();
+    }
     
     
     /*
@@ -84,6 +105,7 @@ public class Utilidades {
     }
     
     */
+    
     
     public static void insertarJSON() {
         JSONParser jsonParser = new JSONParser();
@@ -122,12 +144,12 @@ public class Utilidades {
     }
     
     public static void CambiarImgPuntos(JLabel[] botonPunto, int contador) {
-        for (int i = 0; i < botonPunto.length; i++) {
+        for (JLabel botonPunto1 : botonPunto) {
             ImageIcon botonVacio = new ImageIcon("src/images/PuntoCarruselEmpty.png");
             int widthVacio = botonVacio.getIconWidth();
             int heightVacio = botonVacio.getIconHeight();
             Icon iconVacio = new ImageIcon(botonVacio.getImage().getScaledInstance(widthVacio, heightVacio, Image.SCALE_SMOOTH));
-            botonPunto[i].setIcon(iconVacio);
+            botonPunto1.setIcon(iconVacio);
         }
 
         ImageIcon botonLleno = new ImageIcon("src/images/PuntoCarruselFilled.png");
@@ -149,4 +171,47 @@ public class Utilidades {
 
         jLabelFondo.repaint();
     }
+    
+    public static void SetButtonsCarruselSmall (JLabel jLabelComenzar, String name){
+        
+        ImageIcon image = new ImageIcon("src/images/" + name + ".png");
+                
+        int width = image.getIconWidth();
+        int height = image.getIconHeight();
+
+        Icon icon = new ImageIcon (image.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
+        jLabelComenzar.setIcon(icon);
+
+        jLabelComenzar.repaint();
+    }
+    
+    public static void SetButtonsCarruselBig (JLabel jLabelButtons, String name){
+        
+        ImageIcon image = new ImageIcon("src/images/" + name + ".png");
+        
+            int imgWidth = image.getIconWidth();
+            int imgHeight = image.getIconHeight();
+
+            int labelWidth = jLabelButtons.getWidth();
+            int labelHeight = jLabelButtons.getHeight();
+            
+            if (imgWidth < imgHeight){
+                float proporcionWidth = (float) labelWidth / imgWidth;
+                int width = Math.round(proporcionWidth * imgWidth);
+                int height = Math.round(proporcionWidth * imgHeight);   
+                
+                Icon icon = new ImageIcon (image.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
+                jLabelButtons.setIcon(icon);
+            } else {
+                float proporcionHeight = (float) labelHeight / imgHeight;
+                int width = Math.round(proporcionHeight * imgWidth);
+                int height = Math.round(proporcionHeight * imgHeight);
+                
+                Icon icon = new ImageIcon (image.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
+                jLabelButtons.setIcon(icon);
+            }
+            
+            jLabelButtons.repaint();
+    }
+    
 }
