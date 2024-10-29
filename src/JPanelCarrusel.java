@@ -111,7 +111,7 @@ public final class JPanelCarrusel extends javax.swing.JPanel {
     
     public void mostrarImgCentral(){
                 
-        Utilidades.SetJLabelCarruselCentralImg(imgCentral, numImgInicial);
+        Utilidades.SetJLabelCarruselCentralImgWithDelay(imgCentral, numImgInicial,10);
         
         JLabel[] botonPunto = {
             puntoCarrusel0, puntoCarrusel1, puntoCarrusel2, puntoCarrusel3, puntoCarrusel4

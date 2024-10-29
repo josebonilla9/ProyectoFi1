@@ -1,5 +1,7 @@
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import java.io.IOException;
@@ -80,11 +82,10 @@ public class Utilidades {
     
     
 // Desde aquí código del JPanelCarrusel
-    
+    private static String elementoSinNum = "";
     
     public static String mostrarMensajeConsola(int index) {
-        String elementoSinNum = "";
-        
+                
         try {
             String content = new String(Files.readAllBytes(Paths.get("src/images/grados.json")));
             
@@ -94,8 +95,6 @@ public class Utilidades {
                 String elemento = items.getString(0);
                 elementoSinNum = elemento.substring(0, elemento.length() - 1);
                 
-                System.out.println("  Elemento: " + elementoSinNum);
-
         } catch (IOException e) {
             System.out.println("Error al leer el archivo JSON.");
         } catch (org.json.JSONException e) {
@@ -104,11 +103,19 @@ public class Utilidades {
         
         return elementoSinNum;
     }
+    
+    public static void SetJLabelCarruselCentralImgWithDelay(JLabel jLabelFondo, int contador, int delay) {
+        Timer timer = new Timer(delay, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SetJLabelCarruselCentralImg(jLabelFondo, contador);
+            }
+        });
+        timer.setRepeats(false);
+        timer.start();
+    }
         
     public static void SetJLabelCarruselCentralImg (JLabel jLabelFondo, int contador){
-                
-        //Crear bucle for para elegir la imagen según el contador
-        
         ImageIcon image = new ImageIcon("src/images/" + elementoSinNum + contador + ".png");
                 
         int width = image.getIconWidth();
