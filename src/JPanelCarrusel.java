@@ -12,6 +12,8 @@ public final class JPanelCarrusel extends javax.swing.JPanel {
         Utilidades.SetJLabelCarruselLateralImg(imgLateral2);
         mostrarButtons();
         mostrarImgCentral();
+        
+        textArea.setOpaque(false);
     }
     
     @SuppressWarnings("unchecked")
@@ -32,8 +34,10 @@ public final class JPanelCarrusel extends javax.swing.JPanel {
         panelTexto = new javax.swing.JPanel();
         titulo = new javax.swing.JLabel();
         barraAislada = new javax.swing.JLabel();
+        textArea = new javax.swing.JTextArea();
         botonComenzar = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setOpaque(false);
         setPreferredSize(new java.awt.Dimension(1510, 780));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,13 +85,23 @@ public final class JPanelCarrusel extends javax.swing.JPanel {
 
         titulo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         titulo.setForeground(new java.awt.Color(255, 255, 255));
-        titulo.setText("Embarque y desembarque en helicoptero");
-        panelTexto.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 10, 440, -1));
+        panelTexto.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 10, 730, 30));
 
         barraAislada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Barrita aislada descripción.png"))); // NOI18N
         panelTexto.add(barraAislada, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
-        add(panelTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 760, 230));
+        textArea.setColumns(20);
+        textArea.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        textArea.setForeground(new java.awt.Color(255, 255, 255));
+        textArea.setLineWrap(true);
+        textArea.setRows(5);
+        textArea.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        textArea.setEnabled(false);
+        textArea.setFocusable(false);
+        textArea.setOpaque(false);
+        panelTexto.add(textArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 730, 220));
+
+        add(panelTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 780, 280));
 
         botonComenzar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add(botonComenzar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 760, 300, 50));
@@ -110,8 +124,8 @@ public final class JPanelCarrusel extends javax.swing.JPanel {
     }
     
     public void mostrarImgCentral(){
-                
-        Utilidades.SetJLabelCarruselCentralImgWithDelay(imgCentral, numImgInicial,10);
+        
+        Utilidades.SetInfoCarruselCentralWithDelay(imgCentral, titulo, textArea, numImgInicial,10);
         
         JLabel[] botonPunto = {
             puntoCarrusel0, puntoCarrusel1, puntoCarrusel2, puntoCarrusel3, puntoCarrusel4
@@ -177,6 +191,7 @@ public final class JPanelCarrusel extends javax.swing.JPanel {
     private javax.swing.JLabel puntoCarrusel2;
     private javax.swing.JLabel puntoCarrusel3;
     private javax.swing.JLabel puntoCarrusel4;
+    private javax.swing.JTextArea textArea;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 }

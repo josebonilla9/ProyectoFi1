@@ -5,9 +5,10 @@ import javax.swing.*;
 
 public final class JFramePrincipal extends javax.swing.JFrame {
 
+     // Constructor de la clase JFramePrincipal
     public JFramePrincipal() {
-        initComponents();
-        mostrarLauncherButtons();
+        initComponents(); // Inicializa los componentes de la interfaz gráfica
+        mostrarLauncherButtons(); // Llama al método para mostrar los botones del lanzador
     }
 
     @SuppressWarnings("unchecked")
@@ -143,57 +144,71 @@ public final class JFramePrincipal extends javax.swing.JFrame {
         });
     }
                 
+     // Método para mostrar los botones del lanzador
     public void mostrarLauncherButtons() {
-        JFramePrincipal frame = this;
+        
+        JFramePrincipal frame = this; // Referencia a la instancia actual de JFramePrincipal
 
+        // Array de JLabels para los botones del lanzador
         JLabel[] botonLaunchers = {
             botonLauncher0, botonLauncher1, botonLauncher2, botonLauncher3, botonLauncher4,
             botonLauncher5, botonLauncher6, botonLauncher7, botonLauncher8, botonLauncher9,
             botonLauncher10, botonLauncher11, botonLauncher12, botonLauncher13
         };
 
+        // Bucle for que itera sobre cada botón en el arreglo
         for (int i = 0; i < botonLaunchers.length; i++) {
+            // Configura la imagen pequeña para el botón usando un método utilitario
             Utilidades.SetButtonLauncherImageSmall(botonLaunchers[i], i % 14);
-            final int index = i;
+            final int index = i; // Captura el índice para uso en el listener
 
+            // Añade un MouseListener a cada botón para manejar eventos del mouse
             botonLaunchers[i].addMouseListener(new java.awt.event.MouseAdapter() {
                 @Override
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    // Crea un nuevo JPanelSimuladores y muestra este panel al hacer clic
                     JPanelSimuladores panelSimuladores = new JPanelSimuladores(frame);
                     showPanel(panelSimuladores);
+                    Utilidades.indexEscudo = index;
                 }
                 @Override
                 public void mouseEntered(java.awt.event.MouseEvent evt) {
+                    // Cambia la imagen del botón a una más grande al entrar el mouse
                     Utilidades.SetButtonLauncherImageBig(botonLaunchers[index], index % 14);
                 }
                 @Override
                 public void mouseExited(java.awt.event.MouseEvent evt) {
+                    // Restaura la imagen pequeña al salir el mouse
                     Utilidades.SetButtonLauncherImageSmall(botonLaunchers[index], index % 14);
                 }
                 @Override
                 public void mousePressed(java.awt.event.MouseEvent evt) {
+                    // Cambia la imagen del botón a pequeña al presionar
                     Utilidades.SetButtonLauncherImageSmall(botonLaunchers[index], index % 14);
                 }
                 @Override
                 public void mouseReleased(java.awt.event.MouseEvent evt) {
+                    // Cambia la imagen a grande al soltar el botón del mouse
                     Utilidades.SetButtonLauncherImageBig(botonLaunchers[index], index % 14);
                 }
             });
         }
     }
     
+    // Método para mostrar un JPanel en el JFrame
     public void showPanel(JPanel p) {
-        p.setSize(1510, 830);
-        p.setLocation(0, 0);
-        
-        content.removeAll();
-        content.add(p, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        p.setSize(1510, 830); // Establece el tamaño del panel
+        p.setLocation(0, 0); // Establece la ubicación del panel
+
+        content.removeAll(); // Limpia el contenido del contenedor
+        content.add(p, BorderLayout.CENTER); // Añade el nuevo panel al centro del contenedor
+        content.revalidate(); // Vuelve a validar el contenedor para aplicar los cambios
+        content.repaint(); // Redibuja el contenedor
     }
     
+    // Método para mostrar un panel de carrusel que se hereda de showPanel
     public void showCarrusel(JPanelCarrusel panelCarrusel) {
-        showPanel(panelCarrusel);
+        showPanel(panelCarrusel); // Llama a showPanel con el panel de carrusel
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
