@@ -144,14 +144,12 @@ public class Utilidades {
             JSONObject jsonObject = new JSONObject(content);
             
             // Obtiene los elementos del JSON
-            JSONArray escudoArray = jsonObject.getJSONArray("Escudos").getJSONObject(indexEscudo).getJSONArray("Simuladores");
+            JSONObject escudoArray = jsonObject.getJSONArray("Escudos").getJSONObject(indexEscudo).getJSONArray("Simuladores").getJSONObject(index);
             
-            JSONObject escudoObject = escudoArray.getJSONObject(index);
-                               
                     // Almacena los valores en el array `elementos`
-                    elementos[0] = escudoObject.getString("img");
-                    elementos[1] = escudoObject.getString("titulo");
-                    elementos[2] = escudoObject.getString("texto");
+                    elementos[0] = escudoArray.getString("img");
+                    elementos[1] = escudoArray.getString("titulo");
+                    elementos[2] = escudoArray.getString("texto");
                     return elementos; // Devuelve inmediatamente al encontrar el grado
                                                                     
         } catch (IOException e) {
