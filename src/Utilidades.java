@@ -137,7 +137,7 @@ public class Utilidades {
     public static int indexEscudo;
     
     // Método para leer elementos de un archivo JSON
-    public static String[] traerElementosJSON(int index) {
+    public static String[] traerElementosJSONCarrusel(int index) {
         try {
             String content = new String(Files.readAllBytes(Paths.get("src/grados.json")));
             

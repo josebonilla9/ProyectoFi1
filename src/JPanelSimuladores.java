@@ -91,7 +91,7 @@ public final class JPanelSimuladores extends javax.swing.JPanel {
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
                     JPanelCarrusel panelCarrusel = new JPanelCarrusel();
                     framePrincipal.showCarrusel(panelCarrusel);
-                    Utilidades.traerElementosJSON(index);
+                    Utilidades.traerElementosJSONCarrusel(index);
                 }
                 @Override
                 public void mouseEntered(java.awt.event.MouseEvent evt) {
