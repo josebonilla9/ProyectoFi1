@@ -170,6 +170,7 @@ public final class JFramePrincipal extends javax.swing.JFrame {
                     JPanelSimuladores panelSimuladores = new JPanelSimuladores(frame);
                     showPanel(panelSimuladores);
                     Utilidades.indexEscudo = index;
+                    Utilidades.traerElementosJSONSimuladores(index);
                 }
                 @Override
                 public void mouseEntered(java.awt.event.MouseEvent evt) {

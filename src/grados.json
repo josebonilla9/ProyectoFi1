@@ -1,701 +1,578 @@
 {
-    "Escudo0": [{
-        "Simulador0": [
+    "Escudos": [
+    {
+        "Nombre": "Escudo0",
+        "Simuladores": [
             {
+                "grado": "Grado0",
                 "titulo": "Embarque y desembarque en helicóptero",
                 "texto": "Texto 1",
                 "img": "Embarque"
-            }
-        ],
-
-        "Simulador1": [
+            },
             {
+                "grado": "Grado1",
                 "img": "Hemorragia",
                 "titulo": "Protocolo ante una hemorragia externa",
                 "texto": "Texto 2"
-            }
-        ],
-
-        "Simulador2": [
+            },
             {
+                "grado": "Grado2",
                 "img": "Extincion",
                 "titulo": "Maniobras de extinción según la instalación",
                 "texto": "Texto 3"
-            }
-        ],
-
-        "Simulador3": [
+            },
             {
+                "grado": "Grado3",
                 "titulo": "Tipología y características de los EPIs",
                 "img": "EPIS",
                 "texto": "Texto 4"
-            }
-        ],
-
-        "Simulador4": [
+            },
             {
+                "grado": "Grado4",
                 "img": "Helicoptero",
                 "titulo": "Señalización a helicóptero desde tierra",
                 "texto": "Texto 5"
-            }
-        ],
-
-        "Simulador5": [
+            },
             {
+                "grado": "Grado5",
                 "img": "Ascensor",
                 "titulo": "Rescate en ascensor",
                 "texto": "Texto 6"
             }
         ]
-    }],
-
-    "Escudo1" : [{
-        "Simulador0": [
+    },
+    {
+        "Nombre": "Escudo1",
+        "Simuladores": [
             {
-                "titulo": "Embarque y desembarque en helicóptero",
-                "texto": "Texto 1",
-                "img": "Embarque"
-            }
-        ],
-
-        "Simulador3": [
-            {
+                "grado": "Grado1",
                 "img": "Hemorragia",
                 "titulo": "Protocolo ante una hemorragia externa",
                 "texto": "Texto 2"
-            }
-        ],
-
-        "Simulador2": [
+            },
             {
+                "grado": "Grado0",
+                "titulo": "Embarque y desembarque en helicóptero",
+                "texto": "Texto 1",
+                "img": "Embarque"
+            },
+            {
+                "grado": "Grado2",
                 "img": "Extincion",
                 "titulo": "Maniobras de extinción según la instalación",
                 "texto": "Texto 3"
-            }
-        ],
-
-        "Simulador1": [
+            },
             {
+                "grado": "Grado3",
                 "titulo": "Tipología y características de los EPIs",
                 "img": "EPIS",
                 "texto": "Texto 4"
-            }
-        ],
-
-        "Simulador4": [
+            },
             {
+                "grado": "Grado4",
                 "img": "Helicoptero",
                 "titulo": "Señalización a helicóptero desde tierra",
                 "texto": "Texto 5"
-            }
-        ],
-
-        "Simulador5": [
+            },
             {
+                "grado": "Grado5",
                 "img": "Ascensor",
                 "titulo": "Rescate en ascensor",
                 "texto": "Texto 6"
             }
         ]
-    }],
-
-    "Escudo2" : [{
-        "Simulador0": [
+    },
+    {
+        "Nombre": "Escudo2",
+        "Simuladores": [
             {
-                "titulo": "Embarque y desembarque en helicóptero",
-                "texto": "Texto 1",
-                "img": "Embarque"
-            }
-        ],
-
-        "Simulador1": [
-            {
+                "grado": "Grado1",
                 "img": "Hemorragia",
                 "titulo": "Protocolo ante una hemorragia externa",
                 "texto": "Texto 2"
-            }
-        ],
-
-        "Simulador2": [
+            },
             {
-                "img": "Extincion",
-                "titulo": "Maniobras de extinción según la instalación",
-                "texto": "Texto 3"
-            }
-        ],
-
-        "Simulador3": [
+                "grado": "Grado0",
+                "titulo": "Embarque y desembarque en helicóptero",
+                "texto": "Texto 1",
+                "img": "Embarque"
+            },
             {
+                "grado": "Grado3",
                 "titulo": "Tipología y características de los EPIs",
                 "img": "EPIS",
                 "texto": "Texto 4"
-            }
-        ],
-
-        "Simulador4": [
+            },
             {
+                "grado": "Grado2",
+                "img": "Extincion",
+                "titulo": "Maniobras de extinción según la instalación",
+                "texto": "Texto 3"
+            },
+            {
+                "grado": "Grado4",
                 "img": "Helicoptero",
                 "titulo": "Señalización a helicóptero desde tierra",
                 "texto": "Texto 5"
-            }
-        ],
-
-        "Simulador5": [
+            },
             {
+                "grado": "Grado5",
                 "img": "Ascensor",
                 "titulo": "Rescate en ascensor",
                 "texto": "Texto 6"
             }
         ]
-    }],
-
-    "Escudo3" : [{
-        "Simulador0": [
+    },
+    {
+        "Nombre": "Escudo3",
+        "Simuladores": [
             {
-                "titulo": "Embarque y desembarque en helicóptero",
-                "texto": "Texto 1",
-                "img": "Embarque"
-            }
-        ],
-
-        "Simulador1": [
-            {
+                "grado": "Grado1",
                 "img": "Hemorragia",
                 "titulo": "Protocolo ante una hemorragia externa",
                 "texto": "Texto 2"
-            }
-        ],
-
-        "Simulador2": [
+            },
             {
+                "grado": "Grado0",
+                "titulo": "Embarque y desembarque en helicóptero",
+                "texto": "Texto 1",
+                "img": "Embarque"
+            },
+            {
+                "grado": "Grado2",
                 "img": "Extincion",
                 "titulo": "Maniobras de extinción según la instalación",
                 "texto": "Texto 3"
-            }
-        ],
-
-        "Simulador3": [
+            },
             {
+                "grado": "Grado3",
                 "titulo": "Tipología y características de los EPIs",
                 "img": "EPIS",
                 "texto": "Texto 4"
-            }
-        ],
-
-        "Simulador4": [
+            },
             {
+                "grado": "Grado5",
+                "img": "Ascensor",
+                "titulo": "Rescate en ascensor",
+                "texto": "Texto 6"
+            },
+            {
+                "grado": "Grado4",
                 "img": "Helicoptero",
                 "titulo": "Señalización a helicóptero desde tierra",
                 "texto": "Texto 5"
             }
-        ],
-
-        "Simulador5": [
+        ]
+    },
+    {
+        "Nombre": "Escudo4",
+        "Simuladores": [
             {
+                "grado": "Grado1",
+                "img": "Hemorragia",
+                "titulo": "Protocolo ante una hemorragia externa",
+                "texto": "Texto 2"
+            },
+            {
+                "grado": "Grado2",
+                "img": "Extincion",
+                "titulo": "Maniobras de extinción según la instalación",
+                "texto": "Texto 3"
+            },
+            {
+                "grado": "Grado3",
+                "titulo": "Tipología y características de los EPIs",
+                "img": "EPIS",
+                "texto": "Texto 4"
+            },
+            {
+                "grado": "Grado4",
+                "img": "Helicoptero",
+                "titulo": "Señalización a helicóptero desde tierra",
+                "texto": "Texto 5"
+            },
+            {
+                "grado": "Grado5",
+                "img": "Ascensor",
+                "titulo": "Rescate en ascensor",
+                "texto": "Texto 6"
+            },
+            {
+                "grado": "Grado0",
+                "titulo": "Embarque y desembarque en helicóptero",
+                "texto": "Texto 1",
+                "img": "Embarque"
+            }
+        ]
+    },
+    {
+        "Nombre": "Escudo5",
+        "Simuladores": [
+            {
+                "grado": "Grado0",
+                "titulo": "Embarque y desembarque en helicóptero",
+                "texto": "Texto 1",
+                "img": "Embarque"
+            },
+            {
+                "grado": "Grado1",
+                "img": "Hemorragia",
+                "titulo": "Protocolo ante una hemorragia externa",
+                "texto": "Texto 2"
+            },
+            {
+                "grado": "Grado2",
+                "img": "Extincion",
+                "titulo": "Maniobras de extinción según la instalación",
+                "texto": "Texto 3"
+            },
+            {
+                "grado": "Grado3",
+                "titulo": "Tipología y características de los EPIs",
+                "img": "EPIS",
+                "texto": "Texto 4"
+            },
+            {
+                "grado": "Grado4",
+                "img": "Helicoptero",
+                "titulo": "Señalización a helicóptero desde tierra",
+                "texto": "Texto 5"
+            },
+            {
+                "grado": "Grado5",
                 "img": "Ascensor",
                 "titulo": "Rescate en ascensor",
                 "texto": "Texto 6"
             }
         ]
-    }],
-
-    "Escudo4" : [{
-        "Simulador0": [
+    },
+    {
+        "Nombre": "Escudo6",
+        "Simuladores": [
             {
-                "titulo": "Embarque y desembarque en helicóptero",
-                "texto": "Texto 1",
-                "img": "Embarque"
-            }
-        ],
-
-        "Simulador1": [
-            {
+                "grado": "Grado1",
                 "img": "Hemorragia",
                 "titulo": "Protocolo ante una hemorragia externa",
                 "texto": "Texto 2"
-            }
-        ],
-
-        "Simulador2": [
+            },
             {
+                "grado": "Grado0",
+                "titulo": "Embarque y desembarque en helicóptero",
+                "texto": "Texto 1",
+                "img": "Embarque"
+            },
+            {
+                "grado": "Grado2",
                 "img": "Extincion",
                 "titulo": "Maniobras de extinción según la instalación",
                 "texto": "Texto 3"
-            }
-        ],
-
-        "Simulador3": [
+            },
             {
+                "grado": "Grado3",
                 "titulo": "Tipología y características de los EPIs",
                 "img": "EPIS",
                 "texto": "Texto 4"
-            }
-        ],
-
-        "Simulador4": [
+            },
             {
+                "grado": "Grado4",
                 "img": "Helicoptero",
                 "titulo": "Señalización a helicóptero desde tierra",
                 "texto": "Texto 5"
-            }
-        ],
-
-        "Simulador5": [
+            },
             {
+                "grado": "Grado5",
                 "img": "Ascensor",
                 "titulo": "Rescate en ascensor",
                 "texto": "Texto 6"
             }
         ]
-    }],
-
-    "Escudo5" : [{
-        "Simulador0": [
+    },
+    {
+        "Nombre": "Escudo7",
+        "Simuladores": [
             {
+                "grado": "Grado0",
                 "titulo": "Embarque y desembarque en helicóptero",
                 "texto": "Texto 1",
                 "img": "Embarque"
-            }
-        ],
-
-        "Simulador1": [
+            },
             {
+                "grado": "Grado1",
                 "img": "Hemorragia",
                 "titulo": "Protocolo ante una hemorragia externa",
                 "texto": "Texto 2"
-            }
-        ],
-
-        "Simulador2": [
+            },
             {
+                "grado": "Grado2",
                 "img": "Extincion",
                 "titulo": "Maniobras de extinción según la instalación",
                 "texto": "Texto 3"
-            }
-        ],
-
-        "Simulador3": [
+            },
             {
+                "grado": "Grado3",
                 "titulo": "Tipología y características de los EPIs",
                 "img": "EPIS",
                 "texto": "Texto 4"
-            }
-        ],
-
-        "Simulador4": [
+            },
             {
+                "grado": "Grado4",
                 "img": "Helicoptero",
                 "titulo": "Señalización a helicóptero desde tierra",
                 "texto": "Texto 5"
-            }
-        ],
-
-        "Simulador5": [
+            },
             {
+                "grado": "Grado5",
                 "img": "Ascensor",
                 "titulo": "Rescate en ascensor",
                 "texto": "Texto 6"
             }
         ]
-    }],
-
-    "Escudo6" : [{
-        "Simulador0": [
+    },
+    {
+        "Nombre": "Escudo8",
+        "Simuladores": [
             {
-                "titulo": "Embarque y desembarque en helicóptero",
-                "texto": "Texto 1",
-                "img": "Embarque"
-            }
-        ],
-
-        "Simulador1": [
-            {
+                "grado": "Grado1",
                 "img": "Hemorragia",
                 "titulo": "Protocolo ante una hemorragia externa",
                 "texto": "Texto 2"
-            }
-        ],
-
-        "Simulador2": [
+            },
             {
+                "grado": "Grado0",
+                "titulo": "Embarque y desembarque en helicóptero",
+                "texto": "Texto 1",
+                "img": "Embarque"
+            },
+            {
+                "grado": "Grado2",
                 "img": "Extincion",
                 "titulo": "Maniobras de extinción según la instalación",
                 "texto": "Texto 3"
-            }
-        ],
-
-        "Simulador3": [
+            },
             {
+                "grado": "Grado3",
                 "titulo": "Tipología y características de los EPIs",
                 "img": "EPIS",
                 "texto": "Texto 4"
-            }
-        ],
-
-        "Simulador4": [
+            },
             {
+                "grado": "Grado4",
                 "img": "Helicoptero",
                 "titulo": "Señalización a helicóptero desde tierra",
                 "texto": "Texto 5"
-            }
-        ],
-
-        "Simulador5": [
+            },
             {
+                "grado": "Grado5",
                 "img": "Ascensor",
                 "titulo": "Rescate en ascensor",
                 "texto": "Texto 6"
             }
         ]
-    }],
-
-    "Escudo7" : [{
-        "Simulador0": [
+    },
+    {
+        "Nombre": "Escudo9",
+        "Simuladores": [
             {
-                "titulo": "Embarque y desembarque en helicóptero",
-                "texto": "Texto 1",
-                "img": "Embarque"
-            }
-        ],
-
-        "Simulador1": [
-            {
+                "grado": "Grado1",
                 "img": "Hemorragia",
                 "titulo": "Protocolo ante una hemorragia externa",
                 "texto": "Texto 2"
-            }
-        ],
-
-        "Simulador2": [
+            },
             {
-                "img": "Extincion",
-                "titulo": "Maniobras de extinción según la instalación",
-                "texto": "Texto 3"
-            }
-        ],
-
-        "Simulador3": [
+                "grado": "Grado0",
+                "titulo": "Embarque y desembarque en helicóptero",
+                "texto": "Texto 1",
+                "img": "Embarque"
+            },
             {
+                "grado": "Grado3",
                 "titulo": "Tipología y características de los EPIs",
                 "img": "EPIS",
                 "texto": "Texto 4"
-            }
-        ],
-
-        "Simulador4": [
+            },
             {
+                "grado": "Grado2",
+                "img": "Extincion",
+                "titulo": "Maniobras de extinción según la instalación",
+                "texto": "Texto 3"
+            },
+            {
+                "grado": "Grado4",
                 "img": "Helicoptero",
                 "titulo": "Señalización a helicóptero desde tierra",
                 "texto": "Texto 5"
-            }
-        ],
-
-        "Simulador5": [
+            },
             {
+                "grado": "Grado5",
                 "img": "Ascensor",
                 "titulo": "Rescate en ascensor",
                 "texto": "Texto 6"
             }
         ]
-    }],
-
-    "Escudo8" : [{
-        "Simulador0": [
+    },
+    {
+        "Nombre": "Escudo10",
+        "Simuladores": [
             {
-                "titulo": "Embarque y desembarque en helicóptero",
-                "texto": "Texto 1",
-                "img": "Embarque"
-            }
-        ],
-
-        "Simulador1": [
-            {
+                "grado": "Grado1",
                 "img": "Hemorragia",
                 "titulo": "Protocolo ante una hemorragia externa",
                 "texto": "Texto 2"
-            }
-        ],
-
-        "Simulador2": [
+            },
             {
+                "grado": "Grado0",
+                "titulo": "Embarque y desembarque en helicóptero",
+                "texto": "Texto 1",
+                "img": "Embarque"
+            },
+            {
+                "grado": "Grado2",
                 "img": "Extincion",
                 "titulo": "Maniobras de extinción según la instalación",
                 "texto": "Texto 3"
-            }
-        ],
-
-        "Simulador3": [
+            },
             {
+                "grado": "Grado3",
                 "titulo": "Tipología y características de los EPIs",
                 "img": "EPIS",
                 "texto": "Texto 4"
-            }
-        ],
-
-        "Simulador4": [
+            },
             {
+                "grado": "Grado5",
+                "img": "Ascensor",
+                "titulo": "Rescate en ascensor",
+                "texto": "Texto 6"
+            },
+            {
+                "grado": "Grado4",
                 "img": "Helicoptero",
                 "titulo": "Señalización a helicóptero desde tierra",
                 "texto": "Texto 5"
             }
-        ],
-
-        "Simulador5": [
+        ]
+    },
+    {
+        "Nombre": "Escudo11",
+        "Simuladores": [
             {
+                "grado": "Grado1",
+                "img": "Hemorragia",
+                "titulo": "Protocolo ante una hemorragia externa",
+                "texto": "Texto 2"
+            },
+            {
+                "grado": "Grado2",
+                "img": "Extincion",
+                "titulo": "Maniobras de extinción según la instalación",
+                "texto": "Texto 3"
+            },
+            {
+                "grado": "Grado3",
+                "titulo": "Tipología y características de los EPIs",
+                "img": "EPIS",
+                "texto": "Texto 4"
+            },
+            {
+                "grado": "Grado4",
+                "img": "Helicoptero",
+                "titulo": "Señalización a helicóptero desde tierra",
+                "texto": "Texto 5"
+            },
+            {
+                "grado": "Grado5",
+                "img": "Ascensor",
+                "titulo": "Rescate en ascensor",
+                "texto": "Texto 6"
+            },
+            {
+                "grado": "Grado0",
+                "titulo": "Embarque y desembarque en helicóptero",
+                "texto": "Texto 1",
+                "img": "Embarque"
+            }
+        ]
+    },
+    {
+        "Nombre": "Escudo12",
+        "Simuladores": [
+            {
+                "grado": "Grado0",
+                "titulo": "Embarque y desembarque en helicóptero",
+                "texto": "Texto 1",
+                "img": "Embarque"
+            },
+            {
+                "grado": "Grado1",
+                "img": "Hemorragia",
+                "titulo": "Protocolo ante una hemorragia externa",
+                "texto": "Texto 2"
+            },
+            {
+                "grado": "Grado2",
+                "img": "Extincion",
+                "titulo": "Maniobras de extinción según la instalación",
+                "texto": "Texto 3"
+            },
+            {
+                "grado": "Grado3",
+                "titulo": "Tipología y características de los EPIs",
+                "img": "EPIS",
+                "texto": "Texto 4"
+            },
+            {
+                "grado": "Grado4",
+                "img": "Helicoptero",
+                "titulo": "Señalización a helicóptero desde tierra",
+                "texto": "Texto 5"
+            },
+            {
+                "grado": "Grado5",
                 "img": "Ascensor",
                 "titulo": "Rescate en ascensor",
                 "texto": "Texto 6"
             }
         ]
-    }],
-
-    "Escudo9" : [{
-        "Simulador0": [
+    },
+    {
+        "Nombre": "Escudo13",
+        "Simuladores": [
             {
-                "titulo": "Embarque y desembarque en helicóptero",
-                "texto": "Texto 1",
-                "img": "Embarque"
-            }
-        ],
-
-        "Simulador1": [
-            {
+                "grado": "Grado1",
                 "img": "Hemorragia",
                 "titulo": "Protocolo ante una hemorragia externa",
                 "texto": "Texto 2"
-            }
-        ],
-
-        "Simulador2": [
+            },
             {
+                "grado": "Grado0",
+                "titulo": "Embarque y desembarque en helicóptero",
+                "texto": "Texto 1",
+                "img": "Embarque"
+            },
+            {
+                "grado": "Grado2",
                 "img": "Extincion",
                 "titulo": "Maniobras de extinción según la instalación",
                 "texto": "Texto 3"
-            }
-        ],
-
-        "Simulador3": [
+            },
             {
+                "grado": "Grado3",
                 "titulo": "Tipología y características de los EPIs",
                 "img": "EPIS",
                 "texto": "Texto 4"
-            }
-        ],
-
-        "Simulador4": [
+            },
             {
+                "grado": "Grado4",
                 "img": "Helicoptero",
                 "titulo": "Señalización a helicóptero desde tierra",
                 "texto": "Texto 5"
-            }
-        ],
-
-        "Simulador5": [
+            },
             {
+                "grado": "Grado5",
                 "img": "Ascensor",
                 "titulo": "Rescate en ascensor",
                 "texto": "Texto 6"
             }
         ]
-    }],
-
-    "Escudo10" : [{
-        "Simulador0": [
-            {
-                "titulo": "Embarque y desembarque en helicóptero",
-                "texto": "Texto 1",
-                "img": "Embarque"
-            }
-        ],
-
-        "Simulador1": [
-            {
-                "img": "Hemorragia",
-                "titulo": "Protocolo ante una hemorragia externa",
-                "texto": "Texto 2"
-            }
-        ],
-
-        "Simulador2": [
-            {
-                "img": "Extincion",
-                "titulo": "Maniobras de extinción según la instalación",
-                "texto": "Texto 3"
-            }
-        ],
-
-        "Simulador3": [
-            {
-                "titulo": "Tipología y características de los EPIs",
-                "img": "EPIS",
-                "texto": "Texto 4"
-            }
-        ],
-
-        "Simulador4": [
-            {
-                "img": "Helicoptero",
-                "titulo": "Señalización a helicóptero desde tierra",
-                "texto": "Texto 5"
-            }
-        ],
-
-        "Simulador5": [
-            {
-                "img": "Ascensor",
-                "titulo": "Rescate en ascensor",
-                "texto": "Texto 6"
-            }
-        ]
-    }],
-
-    "Escudo11" : [{
-        "Simulador0": [
-            {
-                "titulo": "Embarque y desembarque en helicóptero",
-                "texto": "Texto 1",
-                "img": "Embarque"
-            }
-        ],
-
-        "Simulador1": [
-            {
-                "img": "Hemorragia",
-                "titulo": "Protocolo ante una hemorragia externa",
-                "texto": "Texto 2"
-            }
-        ],
-
-        "Simulador2": [
-            {
-                "img": "Extincion",
-                "titulo": "Maniobras de extinción según la instalación",
-                "texto": "Texto 3"
-            }
-        ],
-
-        "Simulador3": [
-            {
-                "titulo": "Tipología y características de los EPIs",
-                "img": "EPIS",
-                "texto": "Texto 4"
-            }
-        ],
-
-        "Simulador4": [
-            {
-                "img": "Helicoptero",
-                "titulo": "Señalización a helicóptero desde tierra",
-                "texto": "Texto 5"
-            }
-        ],
-
-        "Simulador5": [
-            {
-                "img": "Ascensor",
-                "titulo": "Rescate en ascensor",
-                "texto": "Texto 6"
-            }
-        ]
-    }],
-
-    "Escudo12" : [{
-        "Simulador0": [
-            {
-                "titulo": "Embarque y desembarque en helicóptero",
-                "texto": "Texto 1",
-                "img": "Embarque"
-            }
-        ],
-
-        "Simulador1": [
-            {
-                "img": "Hemorragia",
-                "titulo": "Protocolo ante una hemorragia externa",
-                "texto": "Texto 2"
-            }
-        ],
-
-        "Simulador2": [
-            {
-                "img": "Extincion",
-                "titulo": "Maniobras de extinción según la instalación",
-                "texto": "Texto 3"
-            }
-        ],
-
-        "Simulador3": [
-            {
-                "titulo": "Tipología y características de los EPIs",
-                "img": "EPIS",
-                "texto": "Texto 4"
-            }
-        ],
-
-        "Simulador4": [
-            {
-                "img": "Helicoptero",
-                "titulo": "Señalización a helicóptero desde tierra",
-                "texto": "Texto 5"
-            }
-        ],
-
-        "Simulador5": [
-            {
-                "img": "Ascensor",
-                "titulo": "Rescate en ascensor",
-                "texto": "Texto 6"
-            }
-        ]
-    }],
-
-    "Escudo13" : [{
-        "Simulador0": [
-            {
-                "titulo": "Embarque y desembarque en helicóptero",
-                "texto": "Texto 1",
-                "img": "Embarque"
-            }
-        ],
-
-        "Simulador1": [
-            {
-                "img": "Hemorragia",
-                "titulo": "Protocolo ante una hemorragia externa",
-                "texto": "Texto 2"
-            }
-        ],
-
-        "Simulador2": [
-            {
-                "img": "Extincion",
-                "titulo": "Maniobras de extinción según la instalación",
-                "texto": "Texto 3"
-            }
-        ],
-
-        "Simulador3": [
-            {
-                "titulo": "Tipología y características de los EPIs",
-                "img": "EPIS",
-                "texto": "Texto 4"
-            }
-        ],
-
-        "Simulador4": [
-            {
-                "img": "Helicoptero",
-                "titulo": "Señalización a helicóptero desde tierra",
-                "texto": "Texto 5"
-            }
-        ],
-
-        "Simulador5": [
-            {
-                "img": "Ascensor",
-                "titulo": "Rescate en ascensor",
-                "texto": "Texto 6"
-            }
-        ]
-    }]
+    }
+    ]
 }

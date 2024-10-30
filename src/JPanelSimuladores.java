@@ -83,7 +83,7 @@ public final class JPanelSimuladores extends javax.swing.JPanel {
         };
 
         for (int i = 0; i < botonGrados.length; i++) {
-            Utilidades.SetJLabelGradoImageSmall(botonGrados[i], i);
+            Utilidades.SetInfoCarruselCentralWithDelay(botonGrados[i], i, 10);
             final int index = i;
 
             botonGrados[i].addMouseListener(new java.awt.event.MouseAdapter() {

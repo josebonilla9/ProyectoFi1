@@ -6,8 +6,6 @@ import javax.swing.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -65,10 +63,19 @@ public class Utilidades {
 // Desde aquí código del JPanelSimuladores
     
     // Método para establecer una imagen pequeña en un JLabel de fondo
+    public static void SetInfoCarruselCentralWithDelay(JLabel jLabelFondo, int contador, int delay) {
+        // Crea un Timer para ejecutar la acción después de un retardo
+        Timer timer = new Timer(delay, (ActionEvent e) -> {
+            SetJLabelGradoImageSmall(jLabelFondo, contador);
+        });
+        timer.setRepeats(false); // Evita que el Timer se repita
+        timer.start(); // Inicia el Timer
+    }
+    
     public static void SetJLabelGradoImageSmall (JLabel jLabelFondo, int contador) {
         
         // Carga la imagen y ajusta su tamaño al de la imagen original
-        ImageIcon image = new ImageIcon("src/images/Grado" + contador + ".png");
+        ImageIcon image = new ImageIcon("src/images/" + grados[contador] + ".png");
         int width = image.getIconWidth();
         int height = image.getIconHeight();
         
@@ -81,9 +88,9 @@ public class Utilidades {
     
     // Método para establecer una imagen grande en un JLabel de fondo
     public static void SetJLabelGradoImageBig (JLabel jLabelFondo, int contador) {
-        
+                
         // Carga la imagen desde el directorio especificado
-        ImageIcon image = new ImageIcon("src/images/Grado" + contador + ".png");
+        ImageIcon image = new ImageIcon("src/images/" + grados[contador] + ".png");
         int labelWidth = jLabelFondo.getWidth();
         int labelHeight = jLabelFondo.getHeight();
 
@@ -95,51 +102,33 @@ public class Utilidades {
         jLabelFondo.repaint();
     }
     
-    /*
-        
-    public static void SetLabelImg (JLabel jLabel0, JLabel jLabel1, JLabel jLabel2, JLabel jLabel3, JLabel jLabel4, JLabel jLabel5) {
-        Map<String, String> gradosMap = new HashMap<>();
-        
+    private static final String[] grados = new String[6];
+    
+    // Método para leer elementos de un archivo JSON
+    public static String[] traerElementosJSONSimuladores(int index) {
         try {
             String content = new String(Files.readAllBytes(Paths.get("src/grados.json")));
             
             JSONObject jsonObject = new JSONObject(content);
             
             // Obtiene los elementos del JSON
-            JSONArray escudoArray = jsonObject.getJSONArray("Escudo" + indexEscudo); // Meter index de escudo
-            JSONObject escudoObject = escudoArray.getJSONObject(0);
-            
-            JSONArray items = escudoObject.getJSONArray("Simulador");
-            
-            JLabel[] jLabels = {
-                jLabel0, jLabel1, jLabel2, jLabel3, jLabel4, jLabel5
-            };
-            
-            for (int i = 0; i < items.length(); i++) {
-                System.out.println("  Elemento: " + items.get(i));
-                
-                gradosMap.put("Simulador" + i, "Grado" + i);
-                
-                ImageIcon image = new ImageIcon("src/images/Grado" + i + ".png");
-                int labelWidth = jLabels[i].getWidth();
-                int labelHeight = jLabels[i].getHeight();
-
-                // Ajusta la imagen al tamaño del JLabel
-                Icon icon = new ImageIcon(image.getImage().getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH));
-                jLabels[i].setIcon(icon);
-
-                // Redibuja el JLabel
-                jLabels[i].repaint();
+            JSONArray escudoArray = jsonObject.getJSONArray("Escudos").getJSONObject(index).getJSONArray("Simuladores");
+                    
+            for (int i = 0; i < grados.length; i++) {
+                JSONObject item = escudoArray.getJSONObject(i);
+                grados[i] = item.getString("grado");
             }
-            
+                                     
         } catch (IOException e) {
-            System.out.println("Error al leer el archivo JSON II."); // Maneja errores al leer el archivo
+            System.out.println("Error al leer el archivo JSON."); // Maneja errores al leer el archivo
         } catch (org.json.JSONException e) {
-            System.out.println("Error al analizar el archivo JSON II."); // Maneja errores internos del archivo
+            System.out.println("Error al analizar el archivo JSON."); // Maneja errores internos del archivo
         }
+        
+        // Devuelve el array de grados
+        return grados;
     }
-
-    */
+    
     
 // Desde aquí código del JPanelCarrusel
     
@@ -155,21 +144,16 @@ public class Utilidades {
             JSONObject jsonObject = new JSONObject(content);
             
             // Obtiene los elementos del JSON
-            JSONArray escudoArray = jsonObject.getJSONArray("Escudo" + indexEscudo); // Meter index de escudo
-            JSONObject escudoObject = escudoArray.getJSONObject(0);
+            JSONArray escudoArray = jsonObject.getJSONArray("Escudos").getJSONObject(indexEscudo).getJSONArray("Simuladores");
             
-            JSONArray items = escudoObject.getJSONArray("Simulador" + index);
-            JSONObject item = items.getJSONObject(0);
-            
-            String imagen = item.getString("img");
-            String titulo = item.getString("titulo");
-            String texto = item.getString("texto");
-            
-            // Almacena los elementos en el array
-            elementos[0] = imagen;
-            elementos[1] = titulo;
-            elementos[2] = texto;
-                                                        
+            JSONObject escudoObject = escudoArray.getJSONObject(index);
+                               
+                    // Almacena los valores en el array `elementos`
+                    elementos[0] = escudoObject.getString("img");
+                    elementos[1] = escudoObject.getString("titulo");
+                    elementos[2] = escudoObject.getString("texto");
+                    return elementos; // Devuelve inmediatamente al encontrar el grado
+                                                                    
         } catch (IOException e) {
             System.out.println("Error al leer el archivo JSON."); // Maneja errores al leer el archivo
         } catch (org.json.JSONException e) {
